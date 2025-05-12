@@ -15,7 +15,7 @@ def RGB(event, x, y, flags, param):
 cv2.namedWindow('RGB')
 cv2.setMouseCallback('RGB', RGB)
 
-cap = cv2.VideoCapture('sample/not_fall1.mp4')
+cap = cv2.VideoCapture('sample/not_fall2.mp4')
 my_file = open("coco.txt", "r")
 data = my_file.read()
 class_list = data.split("\n")
@@ -53,7 +53,7 @@ while True:
         print(thresh)
         if 'person' in c:
             # if thresh < 0:
-            if 1.5 * h < w:
+            if 1.3 * h < w:
 
                 cvzone.putTextRect(frame, f'{"person_fall"}', (x1, y1), 1, 1)
                 cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 255), 2)
